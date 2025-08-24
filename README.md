@@ -116,17 +116,10 @@ I welcome contributions! Here’s how you can help:
 - Fork the repository
 
 - Create a new branch
-bash
-```
-git checkout -b feature-new-functionality
-```
+
 
 - Make your changes (bug fix, new feature, documentation improvement, etc.)
 
 - Commit and push your changes
-```
-git commit -m "Add new feature"
-git push origin feature-new-functionality
-```
 
 - Open a Pull Request describing your changes
