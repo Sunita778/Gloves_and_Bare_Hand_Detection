@@ -16,6 +16,13 @@ The objective is to accurately classify hands in images as either `gloved_hand` 
 
 ![Output](https://github.com/Sunita778/Gloves_and_Bare_Hand_Detection/blob/main/output_annotated/runs/1596612561735_jpg.rf.5bbba331bbbf08b7bf69eab7729db958.jpg)
 
+<p align="center">
+  <img src="https://github.com/Sunita778/Gloves_and_Bare_Hand_Detection/blob/main/output_annotated/runs/1596612561735_jpg.rf.5bbba331bbbf08b7bf69eab7729db958.jpg" width="200"/>
+  <img src="https://github.com/Sunita778/Gloves_and_Bare_Hand_Detection/blob/main/output_annotated/runs/IMG20220224162651_jpg.rf.047066a84a7c1a7390953cbc3ac24ce0.jpg" width="200"/>
+  <img src="https://github.com/Sunita778/Gloves_and_Bare_Hand_Detection/blob/main/output_annotated/runs/1597378231696_jpg.rf.22442a29caf1a827dd387f8f31acbb72.jpg" width="200"/>
+  <img src="https://github.com/Sunita778/Gloves_and_Bare_Hand_Detection/blob/main/output_annotated/runs/IMG20220224173903_jpg.rf.a86d604e03b8a96a9ef8580d6f4a69fa.jpg" width="200"/>
+</p>
+
 
 ## ⚙️ Implementation
 
