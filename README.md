@@ -1,0 +1,71 @@
+## README: Gloved vs Ungloved Hand Detection with YOLOv8
+This project addresses a real-world computer vision problem: building a safety compliance system to detect whether factory workers are wearing gloves. It provides a complete object detection pipeline, from model fine-tuning to generating structured detection logs.
+
+***
+## 🚀 Project Overview
+
+The objective is to accurately classify hands in images as either `gloved_hand` or `bare_hand`. The solution is deployed as a Python script that processes a batch of images and outputs annotated visuals and structured JSON data.
+
+| Component | Description |
+| :--- | :--- |
+| **Model** | A fine-tuned YOLOv8 model for specialized hand detection. |
+| **Pipeline** | A Python script that automates detection, annotation, and logging. |
+| **Output** | Annotated images and a JSON file per image with detection details. |
+
+***
+
+## ⚙️ Technical Decisions & Implementation
+
+### 1. Model Selection and Fine-Tuning
+
+* **Initial Problem:** A standard object detection model (like YOLOv8 pre-trained on the COCO dataset) is not suitable for this task because its class list does not include `gloved_hand` or `bare_hand`. Using such a model would result in irrelevant detections, such as "person" or "handbag." 
+* **Solution:** To solve this, a **custom dataset** was created and annotated with the required class labels. The `yolov8n.pt` model was then fine-tuned on this dataset. This approach leverages the powerful feature extraction capabilities of a pre-trained model while specializing it for a unique domain.
+
+### 2. Dataset and Preprocessing
+
+* **Data Organization:** The dataset was organized into the following structure to be compatible with YOLOv8 training:
+    ```
+    dataset/
+    ├── train/
+    │   ├── Images/
+    │   └── labels/
+    └── Valid/
+        ├── Images/
+        └── labels/
+    ```
+
+* **Dataset:** A custom dataset was manually created, consisting of images with both `gloved_hand` and `bare_hand`.
+* **Format:** The dataset was organized into the standard YOLO format to facilitate training. This included separate directories for training and validation images and their corresponding labels.
+* **YAML Configuration:** A `data.yaml` file was used to map dataset paths and define the two custom classes, ensuring the training process correctly identified the data.
+
+### 3. Pipeline Development
+
+* **Core Logic:** The pipeline is a Python script built using the `ultralytics` library. It automates the entire process, making it simple to use.
+* **Dynamic Paths:** To prevent `ERROR` during execution, the script was designed to use a single configuration point for input/output folders and to dynamically retrieve the path to the trained model after the training phase. This makes the pipeline robust and easy to deploy.
+* **Structured Output:** The script not only saves annotated images but also generates a JSON file for each image. This provides a machine-readable record of all detections, including `label`, `confidence`, and `bbox` coordinates, which is crucial for integration into a larger safety compliance system.
+
+***
+
+## ▶️ How to Run the Script
+
+### Prerequisites
+
+* Python 3.8+
+* `ultralytics` library (`pip install ultralytics`)
+
+### Instructions
+
+*  **Set up your folder structure:** Organize your project with the following directories in your Google Drive or local machine:
+    * `dataset/` (contains your `train` and `validation` data)
+    * `input_images/` (for new images you want to test)
+    * `output_annotated/`
+    * `output_logs/`
+
+
+*  **Execute the Script:** Run the Python script. It will perform two main tasks sequentially:
+    * **Training:** It will train a new model and save it to `training_runs/`.
+    * **Inference:** It will then load the newly trained model and run detection on the images in the `input_images` folder.
+
+The results, including annotated images and JSON logs, will be saved to the `output_annotated/` and `output_logs/` folders, respectively.
+
+-----

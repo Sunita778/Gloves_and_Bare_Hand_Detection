@@ -1,0 +1,15 @@
+{
+  "filename": "IMG20220226194222_jpg.rf.a0e865e4847b68e1b810e62388d94b63.jpg",
+  "detections": [
+    {
+      "label": "bare_hand",
+      "confidence": 0.9,
+      "bbox": [
+        108,
+        121,
+        328,
+        345
+      ]
+    }
+  ]
+}

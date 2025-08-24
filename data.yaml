@@ -1,0 +1,5 @@
+train: /content/drive/MyDrive/Hand Detection/train/images
+val: /content/drive/MyDrive/Hand Detection/valid/images
+
+nc: 2  # number of classes
+names: ['gloved_hand', 'bare_hand']
