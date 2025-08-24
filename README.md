@@ -14,7 +14,10 @@ The objective is to accurately classify hands in images as either `gloved_hand` 
 
 ***
 
-## ⚙️ Technical Decisions & Implementation
+![Output](https://github.com/Sunita778/Gloves_and_Bare_Hand_Detection/blob/main/output_annotated/runs/1596612561735_jpg.rf.5bbba331bbbf08b7bf69eab7729db958.jpg)
+
+
+## ⚙️ Implementation
 
 ### 1. Model Selection and Fine-Tuning
 
@@ -50,8 +53,18 @@ The objective is to accurately classify hands in images as either `gloved_hand` 
 
 ### Prerequisites
 
-* Python 3.8+
-* `ultralytics` library (`pip install ultralytics`)
+#### 📦 Installation
+
+Clone this repo and install dependencies:
+```
+git clone https://github.com/ultralytics/ultralytics.git
+cd ultralytics
+pip install -r requirements.txt
+```
+Or install YOLOv8 directly via PyPI:
+```
+pip install ultralytics
+```
 
 ### Instructions
 
@@ -69,3 +82,46 @@ The objective is to accurately classify hands in images as either `gloved_hand` 
 The results, including annotated images and JSON logs, will be saved to the `output_annotated/` and `output_logs/` folders, respectively.
 
 -----
+
+
+## 🙌 How to Use
+
+- Fork this repository
+
+- Clone it locally
+bash
+```
+git clone https://github.com/Sunita778/Gloves_and_Bare_Hand_Detection.git
+```
+
+- Install dependencies (see Installation
+)
+
+- Place your images in images/ and your trained model weights (best.pt) in the root folder
+
+- Run detection with detect.py
+
+- Check the output/ folder for results
+
+
+## 🤝 Contributing
+
+I welcome contributions! Here’s how you can help:
+
+- Fork the repository
+
+- Create a new branch
+bash
+```
+git checkout -b feature-new-functionality
+```
+
+- Make your changes (bug fix, new feature, documentation improvement, etc.)
+
+- Commit and push your changes
+```
+git commit -m "Add new feature"
+git push origin feature-new-functionality
+```
+
+- Open a Pull Request describing your changes
